@@ -1,0 +1,32 @@
+/* Cím formázása más betűtípussal és balra zárt */
+h1 {
+    font-family: "Arial", sans-serif; /* Más betűtípus */
+    text-align: left; /* Balra zárt */
+  }
+
+  
+  /* Weboldal margója */
+  body {
+    margin: 100px; /* 
+    background-color: #d8d8dc; /* Háttérszín beállítása */
+    opacity: 0.8; /* Átlátszóság beállítása */
+    background-image: radial-gradient(#a18159 0.5px, #d8d8dc 0.5px); /* Háttérkép beállítása */
+    background-size: 10px 10px; /* Háttérkép méretének beállítása */
+  }
+  
+  
+/* Kép elhelyezése jobbra a szövegtől és pontos méretekkel */
+img {
+    float: right; /* Jobbra igazítás float-tal */
+    margin-left: 50px; /* Bal oldali margó a kép körül */
+    margin-bottom: 20px; /* Alsó margó a kép alatt a szövegtől */
+    border: 4px solid #00000077; /* fekete szegély */
+    border-radius: 10px; /* 10 pixel sugarú lekerekítés a kép sarkainál */
+    width: 510px; /* Kép szélességének beállítása */
+    height: auto; /* Automatikus magasság beállítása a képarány megtartása érdekében */
+  }
+  
+p { 
+  text-align: justify; /* Sorkizárt elrendezés */
+line-height: 1.5; /* Nagyobb sorok közti térköz */
+}
