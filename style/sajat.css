@@ -1,0 +1,65 @@
+/* Cím formázása más betűtípussal */
+h1 {
+  font-family: 'Gotham', sans-serif; /* Gotham betűtípus példaként */
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #f1e9fb; /* Fehér háttérszín */
+}
+/* Bemeneti mezők formázása */
+input[type="text"],
+input[type="number"] {
+  padding: 8px;
+  border: 1px solid #ccc; /* Vezérlő kerete */
+  border-radius: 15px; /* Lekerekített sarkok */
+  background-color: #f1e9fb; /* Fehér háttérszín */
+}
+
+/* Bemeneti mezőkhöz tartozó szövegek és mezők konténereinek formázása */
+.input-container {
+  margin-bottom: 15px;
+  background-color: #f1e9fb;
+  border-radius: 15px;
+  padding: 8px;
+}
+
+/* Bemeneti mezőkhöz tartozó szövegek formázása */
+.input-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Kimeneti adatokhoz tartozó stílusok */
+#eredmenyek {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #f1e9fb; /* Fehér háttérszín */
+}
+  
+  /* Főszöveg formázása */
+  body {
+    font-family: 'Open Sans', sans-serif; /* Open Sans betűtípus példaként */
+    margin: 100px; /* Margó a seblapnak */
+    line-height: 1.5; /* Sorkizárt szöveg */
+  }
+  
+  /* Háttér stílus beállítása */
+  body {
+    background: radial-gradient(circle at bottom left, #317774bc 35%, transparent 36%),
+                radial-gradient(circle at top right, #317774bc 35%, transparent 36%);
+    background-size: 5em 5em;
+    background-color: #E2D1F9;
+    background-color: rgba(226, 209, 249, 0.80); /* Átlátszó háttérszín */
+  }
+  /* Az összes szöveg színének beállítása */
+body,
+h1,
+label,
+input[type="text"],
+input[type="number"],
+#eredmenyek {
+  color: #303a39bc;
+}

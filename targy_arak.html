@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Tárgyak árai</title>
+    <!-- CSS vagy további stílusokat itt lehet hozzáadni -->
+    <link rel="stylesheet" href="style/sajat.css">
+</head>
+<body>
+    <h1>Kiszámoló</h1>
+
+
+    <form id="targyakForm">
+        <div class="input-container">
+            <label for="targyNeve">Tárgy neve:</label>
+            <input type="text" id="targyNeve">
+        </div>
+        <div class="input-container">
+            <label for="targyAr">Tárgy ára:</label>
+            <input type="number" id="targyAr">
+        </div>
+        <button type="button" onclick="targyHozzaadasa()">Hozzáadás</button>
+    </form>
+
+    <div id="eredmenyek">
+        <!-- Ide kerülnek az eredmények -->
+    </div>
+
+    <script>
+        let targyak = [];
+
+        function targyHozzaadasa() {
+            let nevInput = document.getElementById('targyNeve');
+            let arInput = document.getElementById('targyAr');
+
+            let nev = nevInput.value;
+            let ar = parseFloat(arInput.value);
+
+            if (nev.trim() !== '' && !isNaN(ar)) {
+                let targy = {
+                    nev: nev,
+                    ar: ar
+                };
+                targyak.push(targy);
+
+                nevInput.value = '';
+                arInput.value = '';
+            }
+
+            // Eredmények megjelenítése
+            megjelenitEredmenyeket();
+        }
+
+        function megjelenitEredmenyeket() {
+            let eredmenyekDiv = document.getElementById('eredmenyek');
+            eredmenyekDiv.innerHTML = '';
+
+            if (targyak.length > 0) {
+                let legolcsobbTargy = targyak.reduce((prev, current) => (prev.ar < current.ar) ? prev : current);
+
+                let osszeg = targyak.reduce((acc, current) => acc + current.ar, 0);
+                let atlag = osszeg / targyak.length;
+
+                let kulonbsegOsszegNegyzet = targyak.reduce((acc, current) => acc + Math.pow(current.ar - atlag, 2), 0);
+                let szoras = Math.sqrt(kulonbsegOsszegNegyzet / targyak.length);
+
+                eredmenyekDiv.innerHTML += `<p>Legolcsóbb tárgy: ${legolcsobbTargy.nev} - Ára: ${legolcsobbTargy.ar}</p>`;
+                eredmenyekDiv.innerHTML += `<p>Tárgyak árának átlaga: ${atlag}</p>`;
+                eredmenyekDiv.innerHTML += `<p>Árak szórása: ${szoras}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>
