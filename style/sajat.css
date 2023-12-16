@@ -42,7 +42,7 @@ input[type="number"] {
   /* Főszöveg formázása */
   body {
     font-family: 'Open Sans', sans-serif; /* Open Sans betűtípus példaként */
-    margin: 100px; /* Margó a seblapnak */
+    margin: 300px; /* Margó a weblapnak */
     line-height: 1.5; /* Sorkizárt szöveg */
   }
   
